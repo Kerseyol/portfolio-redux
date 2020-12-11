@@ -1,0 +1,211 @@
+.projects {
+  padding-top: 5vh;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: $Typeface;
+}
+
+.projects h2 {
+  margin-bottom: 5vh;
+}
+
+.pro-box2 {
+  padding-top: 5vh;
+}
+
+.pro-button {
+  padding-top: 3vh;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pro-button a {
+  margin-top: 2vh;
+}
+
+.pro-box1-text,
+.pro-box2-text {
+  max-width: 90vw;
+  word-wrap: break-word;
+}
+
+.pro-box1 a,
+.pro-box2 a {
+  text-decoration: none;
+  color: $purple;
+}
+
+.pro-box1-text a,
+.pro-box2-text a {
+  font-size: 1.5rem;
+}
+
+.pro-box1-text p,
+.pro-box2-text p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pro-box1 img,
+.pro-box2 img {
+  overflow-x: hidden;
+  width: min-content;
+  scale: 1;
+  transition: scale 200ms ease-in;
+}
+
+.pro-box1 img:hover,
+.pro-box2 img:hover {
+  scale: 1.05;
+}
+
+.pro-box1-link {
+  animation: blink 7s infinite;
+  -webkit-animation: blink 7s infinite;
+  font-family: $Script;
+}
+
+.pro-box2-link {
+  animation: blink 5s infinite;
+  -webkit-animation: blink 9s infinite;
+  font-family: $Script;
+}
+
+.pro-box1-link,
+.pro-box2-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+  max-width: 100vw;
+  margin: 0 auto;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px $purple, 0 0 15px $purple, 0 0 20px $purple,
+      0 0 40px $purple, 0 0 60px $deepPurple, 0 0 10px $purple,
+      0 0 98px $deepPurple;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px $purple, 0 0 15px $purple, 0 0 20px $purple,
+      0 0 40px $purple, 0 0 60px $deepPurple, 0 0 10px $purple,
+      0 0 98px $deepPurple;
+    color: #fff6a9;
+  }
+}
+
+.pro-box1-link:hover,
+.pro-box2-link:hover,
+.pro-box1-link:focus,
+.pro-box2-link:focus,
+.pro-box1-link:active,
+.pro-box2-link:active {
+  text-decoration: none;
+  color: $deepBlue;
+}
+
+.pro-box1,
+.pro-box2 {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pro-box1-text,
+.pro-box2-text {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.pro-box1,
+.pro-button {
+  opacity: 0;
+  z-index: 1;
+  transform: translateX(4em);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.projects-title,
+.pro-box2 {
+  opacity: 0;
+  z-index: 1;
+  transform: translateX(-4em);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.projects-title.is-visible,
+.pro-box1.is-visible,
+.pro-box1-text.is-visible,
+.pro-box2.is-visible,
+.pro-box2-text.is-visible,
+.pro-button.is-visible {
+  opacity: 1;
+  transform: translateY(0em);
+}
+
+@media (min-width: 768px) {
+  .projects-title {
+    max-width: 30vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .projects-title {
+    max-width: 25vw;
+  }
+}
+
+@media (min-width: 1300px) {
+  .projects-title {
+    max-width: 20vw;
+  }
+}

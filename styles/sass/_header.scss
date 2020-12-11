@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: $blue;
+  z-index: 3;
+}
+
+.logo {
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 2rem;
+  font-family: $Patrick;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style-type: none;
+  font-family: $Patrick;
+}
+
+.nav-links a {
+  color: $black;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a:active {
+  color: white;
+}
+
+.button-style span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-style span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.5s;
+  color: $yellow;
+}
+
+.button-style hover span {
+  padding-right: 50px;
+  font-size: 22px;
+}
+
+.button-style:hover span:after {
+  opacity: 1;
+  right: -15px;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: $black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: $blue;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in;
+    z-index: 6;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      color: black;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+.hero-bottom {
+  height: 0;
+  z-index: 4;
+  position: sticky;
+  top: 20px;
+  left: 10px;
+  width: 95vw;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.arrows {
+  width: 3rem;
+  color: rgba($black, 0.4);
+  background-color: rgba(#ffffff, 0.4);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+#home {
+  position: sticky;
+  z-index: 10;
+}
+
+.arrows:hover {
+  cursor: pointer;
+  color: rgba($black, 0.5);
+  background-color: rgba(#ffffff, 0.5);
+}
+
+@media screen and (min-width: 769px) {
+  .nav-links {
+    width: 70%;
+  }
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .nav-links a {
+    font-size: 1.5rem;
+  }
+  .social-media {
+    align-self: center;
+    justify-content: space-around;
+    min-width: 40%;
+  }
+}
+
+@media (min-width: 1100px) {
+  #home {
+    display: none;
+  }
+}

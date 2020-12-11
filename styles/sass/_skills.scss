@@ -1,0 +1,214 @@
+.skills {
+  background-color: white;
+  background-image: url(./Assets/pattern.png);
+  background-repeat: repeat;
+  background-size: auto;
+  animation: pan-down 15s infinite linear;
+  font-family: $Typeface;
+}
+
+@keyframes pan-down {
+  0% {
+    background-position: top;
+  }
+  50% {
+    background-position: center;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+.skills h2 {
+  text-transform: uppercase;
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+}
+
+.skills-header {
+  background-color: rgba($color: $white, $alpha: 0.8);
+  width: min-content;
+  padding: 1vh 1vw;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-family: $Typeface;
+  font-size: 2rem;
+}
+
+.skills-list {
+  padding-top: 2rem;
+}
+
+.skills-list ul {
+  list-style-type: none;
+  columns: 2;
+}
+
+.skills-list ul li {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.icon-spacing {
+  margin-bottom: 4vh;
+  transition: all 0.15s ease-in-out;
+}
+
+.icon-spacing p {
+  opacity: 0;
+  font-size: 1.3rem;
+  background-color: rgba($color: $white, $alpha: 0.8);
+  width: min-content;
+  padding: 3px;
+  margin: 0 auto;
+  margin-top: 1vh;
+  border-radius: 10px;
+}
+
+.icon-spacing:hover {
+  cursor: pointer;
+}
+
+.icon-spacing:hover p {
+  opacity: 1;
+}
+
+.icon1 img,
+.icon5 img,
+.icon8 img,
+.icon10 img {
+  height: 3rem;
+}
+
+.icon1:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px $indigo);
+  filter: drop-shadow(5px 5px 5px -2px $indigo);
+}
+.icon2:hover {
+  -webkit-filter: drop-shadow(6px 6px 5px $darkBlue);
+  filter: drop-shadow(6px 6px 5px -2px $darkBlue);
+}
+.icon3:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px $purple);
+  filter: drop-shadow(5px 5px 5px -2px $purple);
+}
+.icon4:hover {
+  -webkit-filter: drop-shadow(7px 7px 5px $orange);
+  filter: drop-shadow(7px 7px 5px -2px $orange);
+}
+.icon5:hover {
+  -webkit-filter: drop-shadow(7px 7px 5px $maroon);
+  filter: drop-shadow(7px 7px 5px -2px $maroon);
+}
+.icon6:hover {
+  -webkit-filter: drop-shadow(7px 7px 5px $darkGreen);
+  filter: drop-shadow(7px 7px 5px -2px $darkGreen);
+}
+.icon7:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px $deepBlue);
+  filter: drop-shadow(5px 5px 5px -2px $deepBlue);
+}
+.icon8:hover {
+  -webkit-filter: drop-shadow(8px 8px 5px $darkYellow);
+  filter: drop-shadow(8px 8px 5px -2px $darkYellow);
+}
+.icon9:hover {
+  -webkit-filter: drop-shadow(7px 7px 5px $purple);
+  filter: drop-shadow(7px 7px 5px -2px $purple);
+}
+.icon10:hover {
+  -webkit-filter: drop-shadow(7px 7px 5px $deepBlue);
+  filter: drop-shadow(7px 7px 5px -2px $deepBlue);
+}
+
+.icon2 i {
+  color: $orange;
+}
+
+.icon3 i {
+  color: $yellow;
+}
+
+.icon4 i {
+  color: $green;
+}
+
+.icon6 i {
+  color: $orange;
+}
+
+.icon7 i {
+  color: $purple;
+  margin-right: -5px;
+}
+
+.icon9 i {
+  color: $darkGreen;
+}
+
+.skills-header {
+  opacity: 0;
+  transform: translateY(4em);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+}
+
+.skills-header.is-visible {
+  opacity: 1;
+  z-index: 5;
+  transform: translateY(0em);
+}
+
+.icon1,
+.icon2,
+.icon3,
+.icon4,
+.icon5 {
+  opacity: 0;
+  transform: translateX(-4em);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+}
+
+.icon6,
+.icon7,
+.icon8,
+.icon9,
+.icon10 {
+  opacity: 0;
+  transform: translateX(4em);
+  transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1),
+    opacity 0.3s 0.25s ease-out;
+  will-change: transform, opacity;
+}
+
+@media (min-width: 1000px) {
+  .skills-list ul {
+    columns: 5;
+    width: 65vw;
+    margin: 0 auto;
+  }
+
+  .skills-list {
+    padding-top: 20vh;
+  }
+
+  .icon-top {
+    margin-bottom: 10vh;
+  }
+}
+
+@media (max-width: 1350px) {
+  .icon-spacing p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .icon-spacing p {
+    font-size: 1.1rem;
+  }
+}
